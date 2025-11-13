@@ -1,2 +1,2 @@
-# pokecrud-localstorage
-PokéCRUD: Gestor de Pokémon favoritos basado en Vanilla JavaScript, HTML y CSS. Utiliza localStorage para persistencia de datos.
+PokéCRUD: Gestor de Favoritos con JavaScript Nativo
+Aplicación web minimalista diseñada para practicar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) utilizando Vanilla JavaScript y persistencia de datos a través de localStorage. Ideal para desarrolladores que buscan un ejemplo limpio y funcional de gestión de datos sin frameworks.
