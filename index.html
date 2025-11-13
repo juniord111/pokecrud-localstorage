@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Gestor de favoritos de Pokémon (PokéCRUD) usando JavaScript y localStorage. Permite añadir, editar, eliminar, buscar e importar/exportar." />
+  <meta name="author" content="JDev" />
+  <title>PokéCRUD: Gestión de Pokémon Favoritos (Local Storage)</title>
+  
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="shortcut icon" href="image.png" type="image/x-icon">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>PokéCRUD — Mis Pokémon Favoritos</h1>
+      <p class="subtitle">Guarda, edita y gestiona tu colección personal de Pokémon usando el almacenamiento local.</p>
+    </header>
+
+    <section class="card form-card" aria-labelledby="form-title">
+      <h2 id="form-title">Añadir o Modificar Pokémon</h2>
+
+      <form id="pokemon-form" class="form">
+        <div class="row">
+          <label for="poke-name">Nombre</label>
+          <input id="poke-name" type="text" placeholder="Ej: Pikachu" required aria-required="true" maxlength="50" />
+        </div>
+
+        <div class="row">
+          <label for="poke-type">Tipo</label>
+          <input id="poke-type" type="text" placeholder="Ej: Eléctrico" required aria-required="true" maxlength="30" />
+        </div>
+
+        <div class="row">
+          <label for="poke-img">URL de la Imagen</label>
+          <input id="poke-img" type="url" placeholder="https://..." />
+        </div>
+
+        <div class="row">
+          <label for="poke-note">Nota Personal (Opcional)</label>
+          <input id="poke-note" type="text" placeholder="Mi Pokémon favorito de la región Kanto..." maxlength="100" />
+        </div>
+
+        <div class="actions">
+          <button id="btn-save" type="submit">Guardar Pokémon</button>
+          <button id="btn-clear" type="button" class="secondary">Limpiar Campos</button>
+        </div>
+
+        <input id="editing-id" type="hidden" value="" />
+      </form>
+    </section>
+
+    <section class="card list-card" aria-labelledby="list-title">
+      <h2 id="list-title">Mi Colección Pokémon</h2>
+
+      <div class="controls">
+        <input id="search-input" type="search" placeholder="Buscar por nombre o tipo..." aria-label="Buscar Pokémon por nombre o tipo" />
+        <button id="btn-export" class="secondary small">Exportar JSON</button>
+        
+        <button id="btn-import" class="secondary small">Importar JSON</button>
+        
+        <input id="import-file" type="file" accept=".json" style="display:none;" aria-labelledby="btn-import" />
+      </div>
+
+      <ul id="favorites-list" class="favorites-list" aria-live="polite">
+        </ul>
+
+      <div class="empty-state" id="empty-state">La lista está vacía — ¡Añade tu primer Pokémon!</div>
+    </section>
+
+    <footer class="app-footer">
+      <small>PokéCRUD v1.0 • Desarrollado por **JDev**</small>
+    </footer>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>
